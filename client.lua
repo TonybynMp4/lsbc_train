@@ -127,14 +127,14 @@ end)
 CreateThread(function()
     local Blips = {}
     for _, info in pairs(teleportMarker) do
-        local blip = AddBlipForCoord(info.coords)
+        local blip = AddBlipForCoord(info.coords.x, info.coords.y, info.coords.z)
         SetBlipSprite(blip, info.blip.id)
         SetBlipDisplay(blip, 4)
         SetBlipScale(blip, 1.0)
         SetBlipColour(blip, info.blip.colour)
         SetBlipAsShortRange(blip, true)
         BeginTextCommandSetBlipName("STRING")
-        AddTextComponentString(title)
+        AddTextComponentString(info.blip.title)
         EndTextCommandSetBlipName(blip)
         Blips[#Blips + 1] = blip
     end
