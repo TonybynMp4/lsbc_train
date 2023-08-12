@@ -49,7 +49,7 @@ local function playCutScene(fromPaleto)
     Wait(800)
     loadTrainModels()
 
-    local metro = CreateMissionTrain(26, traincoords.x, traincoords.y, traincoords.z, true, true, true)
+    local metro = CreateMissionTrain(26, traincoords.x, traincoords.y, traincoords.z, true, false, false)
     while not DoesEntityExist(metro) do
         Wait(800)
     end
